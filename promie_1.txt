@@ -1,0 +1,36 @@
+const vrr=new Promise(function(resolve,reject){
+    let err=false;
+    
+    setTimeout(function(){
+        if(err==false){
+        resolve({name:"manish",id:2211981217});
+            
+        }
+        else{
+            reject("error has occred");
+        }
+    },9000)
+})
+vrr.then(function(user){
+    return user.name;
+}).then(function(name)
+{
+    console.log(name);
+})
+vrr.catch(function(error)
+{
+    console.log(error);
+})
+
+
+
+
+
+const promiseone=new Promise(function(resolve,reject){
+    setTimeout(function(){
+        resolve({username:"manish",id:2211981217})
+    },1000)
+})
+promiseone.then(function(user){
+console.log(user);
+})

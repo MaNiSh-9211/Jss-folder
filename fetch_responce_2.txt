@@ -1,0 +1,19 @@
+Inside the `response` parameter in the `.then()` function when using `fetch()`, you typically have access to the HTTP response object that represents the response from the network request. This object includes various properties and methods for inspecting and handling the response. Here are some common properties and methods available on the `response` object:
+
+1. **`response.status`**: This property contains the HTTP status code of the response (e.g., 200 for a successful request, 404 for "Not Found," etc.).
+
+2. **`response.statusText`**: This property contains a human-readable status message corresponding to the status code (e.g., "OK" for 200, "Not Found" for 404).
+
+3. **`response.ok`**: This is a Boolean property that indicates whether the response's status code is within the range of 200-299, which is typically considered a successful response. It's `true` for successful responses and `false` for others.
+
+4. **`response.headers`**: This property is an object representing the response headers. You can use methods like `response.headers.get('Content-Type')` to access specific header values.
+
+5. **`response.json()`**: This is a method you can call on the `response` object to parse the response body as JSON. It returns a promise that resolves with the parsed JSON data.
+
+6. **`response.text()`**: This method is used to read the response body as text. It also returns a promise that resolves with the response body as text.
+
+7. **`response.blob()`**: This method is used to read the response body as a Blob, which is a binary data format.
+
+8. **`response.arrayBuffer()`**: This method is used to read the response body as an ArrayBuffer, which is another way to handle binary data.
+
+When you use the `.then()` function with `response` as a parameter, you can access these properties and methods to inspect and handle the details of the HTTP response and its content, making it possible to process the data returned by the server.

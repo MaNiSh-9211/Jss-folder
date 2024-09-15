@@ -1,0 +1,23 @@
+const vrr=new Promise(function(resolve,reject){
+    let err=true;
+    
+    setTimeout(function(){
+        if(err==false){
+        resolve({name:"manish",id:2211981217});
+            
+        }
+        else{
+            reject("error has occred");
+        }
+    },1000)
+})
+vrr.then(function(user){
+    return user.name;
+}).then(function(name)
+{
+    console.log(name);
+})
+vrr.catch(function(error)
+{
+    console.log(error);
+}).finally(()=>console.log("your request is either completed or either rejected"))

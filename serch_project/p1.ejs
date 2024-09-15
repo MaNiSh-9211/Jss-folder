@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Booking Website</title>
+</head>
+<body>
+  <h1>Car Booking Website</h1>
+  <form action="/" method="GET">
+    <input type="text" name="search" placeholder="Search for a car">
+    <button type="submit">Search</button>
+  </form>
+  <ul>
+    <% cars.forEach(car => { %>
+      <li>
+        <img src="<%= car.imageUrl %>" alt="<%= car.make %> <%= car.model %>">
+        <h2><%= car.make %> <%= car.model %></h2>
+        <p>Year: <%= car.year %></p>
+        <p>Price: <%= car.price %></p>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

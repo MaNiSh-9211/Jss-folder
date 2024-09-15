@@ -1,0 +1,28 @@
+q1 given object as api responce 
+
+
+const data = {
+  items: [
+    { discountedTotal: 10.99 },
+    { discountedTotal: 24.95 },
+    { discountedTotal: 7.50 },
+    { discountedTotal: 16.99 },
+    { discountedTotal: 5.75 }
+  ]
+};
+
+
+
+
+
+fetch('https://dummyjson.com/carts')
+.then(function(data){
+return data.json();
+})
+.then(function(data){
+  let total=0;
+data.carts.forEach(element => {
+  total += element.discountedTotal;
+});
+console.log(total);
+})

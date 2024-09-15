@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hi"></div>
+</body>
+<script>
+    function createLists(){
+    const ul=document.createElement('ul')
+    const li=document.createElement('li')
+    li.innerHTML="Aarushi"
+    const li1=document.createElement('li')
+    li1.innerHTML="Sharma"
+    const ul2=document.createElement('ul')
+    const li2=document.createElement('li')
+    li2.innerHTML="loves"
+    const ol=document.createElement('ol')
+    const li21=document.createElement('li')
+    li21.innerHTML="Abhinav"
+    const li22=document.createElement('li')
+    li22.innerHTML="Rana"
+    const ol1=document.createElement('ol')
+    const li3=document.createElement('li')
+    li3.innerHTML="very"
+    const li4=document.createElement('li')
+    li4.innerHTML="very"
+    const ul3=document.createElement('ul')
+    const li5=document.createElement('li')
+    li5.innerHTML="Much"
+    const li6=document.createElement('li')
+    li6.innerHTML="I LOVE YOU <3"
+    ul.append(li,li1,ul2,ol,ul3)
+    ul2.append(li2)
+    ol.append(li21,li22,ol1)
+    ol1.append(li3,li4)
+    ul3.append(li5,li6)
+    document.getElementById('hi').append(ul)
+    }
+    createLists()
+</script>
+</html>

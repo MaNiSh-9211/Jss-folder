@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Storage Example</title>
+</head>
+<body>
+    <h1>Local Storage Example</h1>
+    <form id="data-form">
+        <label for="input-data">Enter Data:</label>
+        <input type="text" id="input-data" name="input-data" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="display-data"></div>
+
+    
+
+<script>
+function manish() {
+    const dataForm = document.getElementById('data-form');
+    const inputField = document.getElementById('input-data');
+    const displayData = document.getElementById('display-data');
+    
+    dataForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Get user input from the form
+        const inputData = inputField.value;
+
+        // Store the input data in local storage
+        localStorage.setItem('user_data', inputData);
+        let ans=localStorage.getItem('user_data');
+
+        // Display the input data on the page
+        displayData.textContent = `Stored Data: ${ans}`;
+
+        // Clear the form input field
+        inputField.value = '';
+    });
+}
+manish();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+localStorage.setItem("name","abhishek");
+localStorage.setItem("age","22");
+const obj={attr1:"one",attr2:"two"};
+localStorage.setItem("obj_item",JSON.stringify(obj));
+const ans=localStorage.getItem("name");
+const agee=parseInt(localStorage.getItem("age"),10);
+const objjj=JSON.parse(localStorage.getItem("obj_item"));
+console.log(ans);
+console.log(agee);
+console.log(objjj);

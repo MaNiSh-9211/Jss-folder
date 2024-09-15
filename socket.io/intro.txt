@@ -1,0 +1,40 @@
+- socket.io is a js library for websockets
+- websoket - it is a communication protocol like http,smtp,ftp etc
+
+- how it is different from http
+http provide a simplex communication channel where the clint request for data and server sends response after that
+but websocket provides a duplex communication chanel/connection between clint and server.this link is always open the server can send data at any 
+time the clints action is not needed to server for sending response or data.like notifications and chats .the server will send data even if clint
+did not perform any action or event.
+in this clint and server can send and recieve data at any time.
+
+-the IO represents whole user in server and socket represents selected users on the server or ay 1 user
+
+example:
+consider -:IO as an extension board and SOCKET as a plug
+means we can connect any number of plugs(clints) to the extension board(server)
+
+- EACH: socket have its own id and we can acess it using socket.id
+Emit - this is  a method which we use in server side to send data when an event is triggerd.like when user open chat thn a notification is sent to
+another person that his friend has seen the cahts.it takes two parameter ('event',data_to_send)
+
+- ON: this function is used in clint side and it alway keeps listening for any response from the server .if the event is trigerd on server side then server
+sends the data to client and that is recived in the on function having same event
+
+- example of syntax 
+server side  -> io.emit('event1','hi i am manish')
+
+clint side -> socket.on('event1',(message)=>{
+    console.log(message);
+})
+
+if i do io.emit on server side then all clint on server will recieve  the message 
+if i do socket.emit then ten the message is sent to aselected person but we have to provide his id
+socket.broadcast.emit() if any clint will trigger an event then the server will send response to all clints on server except himself.
+
+
+- for personal messaging we use socket.to.emit(id_of_reciver) // hare to is room, bydefault everyone is in thir own room or group and the room id is their own id
+- To used to trigger event for perticular room
+- Join uset to join people in aroom
+syntax 
+socket.join(name_of_room)

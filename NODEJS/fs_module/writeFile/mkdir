@@ -1,0 +1,51 @@
+const fs = require('fs');
+
+// Synchronous mkdir
+// try {
+//     fs.mkdirSync('./tempo/tempo2');
+//     console.log('Directory created successfully.');
+// } catch (err) {
+//     console.error('An error occurred while creating the directory:', err);
+// }
+
+//Synchronous rmdir
+try {
+    fs.rmdirSync('./tempo/tempo2');
+    console.log('Directory deleted successfully.');
+} catch (err) {
+    console.error('An error occurred while deleting the directory:', err);
+}
+
+
+const fs = require('fs');
+
+// Asynchronous mkdir 
+fs.mkdir('./newDirectory', (err) => {
+    if (err) {
+        console.error('An error occurred while creating the directory:', err);
+        return;
+    }
+    console.log('Directory created successfully.');
+});
+
+// Asynchronous rmdir
+fs.rmdir('./newDirectory', (err) => {
+    if (err) {
+        console.error('An error occurred while deleting the directory:', err);
+        return;
+    }
+    console.log('Directory deleted successfully.');
+});
+
+
+
+// function mani(eiwlaw){
+
+// }
+
+// var fghj=function(){
+
+// }
+// module.exports(fgh)
+
+// let ghcjh=fhfhjjk=> return 1
